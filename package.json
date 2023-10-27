@@ -1,0 +1,30 @@
+{
+  "name": "turbo-stream-react-example",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "esbuild src/entry.browser.tsx --bundle --outfile=public/bundle.js --define:process.env.NODE_ENV=\"\\\"production\\\"\" --minify",
+    "start": "node --no-warnings --loader tsm src/entry.server.tsx",
+    "dev": "concurrently \"npm:dev:*\"",
+    "dev:watch": "pnpm run build --watch",
+    "dev:server": "node --no-warnings --loader tsm --watch src/entry.server.tsx"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hono/node-server": "^1.2.0",
+    "hono": "^3.8.4",
+    "react": "canary",
+    "react-dom": "canary",
+    "turbo-stream": "^1.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.9",
+    "@types/react": "^18.2.33",
+    "@types/react-dom": "^18.2.14",
+    "concurrently": "^8.2.2",
+    "tsm": "^2.3.0"
+  }
+}
